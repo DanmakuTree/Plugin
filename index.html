@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link type="text/css" href="style.css" rel="stylesheet"/>
+
+</head>
+<body>
+<div class="container">
+    <ul class="content">
+        <div class="space"></div>
+        <div :style="{'font-size':options.fontSize}">
+            <span class="admin-icon">房管</span>
+            <span class="guard-icon guard-level-3" v-if="options.showGuardIcon"></span>
+            <span :class="fansIconClass" :style="{'--level': data.fansLevel}" v-if="options.showFansIcon">
+                <span style="color: white;float:left;padding: 0 .4em">勋章</span>
+            </span>
+            <span :class="userLevelCalss" v-if="options.showUserLevel">
+                UL
+                <span>{{data.userLevel}}</span>
+            </span>
+            <span>{{data.username}}:</span>
+            <span :style="{color:options.color}" v-if="options.showContent">{{data.content}}</span>
+        </div>
+    </ul>
+    <div style="font-size: 16px;color: black;-webkit-app-region: drag;">点击暂停获取</div>
+</div>
+</body>
+</html>
+<script src="index.js"></script>
+
